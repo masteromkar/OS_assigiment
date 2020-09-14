@@ -1,0 +1,367 @@
+Name: Omkar  Sukale
+Roll No.:-200240520060                                                                                                  
+
+Q1. Explore the following commands with various options, refer man pages for 
+    further help 
+a) date :-
+~$ date
+Sun Sep 13 17:32:20 UTC 2020
+
+b) cal :-
+~$ cal
+   September 2020     
+Su Mo Tu We Th Fr Sa  
+          1  2  3  4  5  
+ 6  7  8  9 10 11 12  
+13 14 15 16 17 18 19  
+20 21 22 23 24 25 26  
+27 28 29 30     
+
+ c) bc :- bc (Basic Calculator) is a command. bc command is used for command line calculator. 
+
+d) echo: this command is used to write the contents in particular file.
+
+ e) who: who displays a list of users who are currently logged into the computer
+
+ f) whoami: it displays the system name
+
+ g) logname : it displays the system name.which we are currently log in.
+
+g) uname:it displays the IDE name. means where you perform the operations.
+
+h) seq :-
+~$ seq 5 5 20
+5
+10
+15
+20
+
+i) clear:- this command is used to clear terminal.
+
+
+Q2.	A) Create three directory a b and c and create a.txt,b.txt and c.txt
+in each directory respectively and then copy c directory into the a.
+Ans:-
+~$ mkdir a b c
+~$ cd a
+~/a$ touch a.txt
+~/a$ ls
+a.txt
+~/a$ cd ..
+~$ touch ./b/b.txt
+~$ cd b
+~/b$ ls
+b.txt
+~/b$ cd ..
+~$ touch ./c/c.txt
+~$ cd c
+~/c$ ls
+c.txt
+~/c$ cd ..
+~$ cp -r c a
+~$ cd a
+~/a$ ls
+a.txt  c
+~/a$ cd c
+~/a/c$ ls
+c.txt
+~/a/c$
+
+B)Move Directory b to c.:-
+~$ mv b c
+~$ cd c
+~/c$ ls
+b  c.txt
+~/c$
+
+C)Create alias of ls -lh command to your name.
+~$ alias omkar=ls
+~$ ls
+'Welcome to CoCalc.term'   a   c   omkar   omkar_sukale   try.ipynb
+~$ omkar
+'Welcome to CoCalc.term'   a   c   omkar   omkar_sukale   try.ipynb
+~$ alias Omkar=-lh
+	
+D)Change Directory name a to cdac.
+~$ ls
+'Welcome to CoCalc.term'   a   c   omkar   omkar_sukale   try.ipynb
+~$ mv a cdac
+~$ ls
+'Welcome to CoCalc.term'   c   cdac   omkar   omkar_sukale   try.ipynb
+
+
+Q3. A) Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+$ cat > file1.txt
+this is file 1
+$ cat > file2.txt
+this is file 2
+$ cat > file3.txt
+this is file 3
+$ cat > file4.txt
+this is file 4
+$ cat > file5.txt
+this is file 5
+$ grep -o "s" file1.txt
+file1.txt:s
+file1.txt:s
+file2.txt:s
+file2.txt:s
+file3.txt:s
+file3.txt:s
+file4.txt:s
+file4.txt:s
+file5.txt:s
+file5.txt:s
+~$ grep -n  "s" file?.txt
+file1.txt:1:this is file 1
+file2.txt:1:this is file 2
+file3.txt:1:this is file 3
+file4.txt:1:this is file 4
+file5.txt:1:this is file 5
+
+    Also Use cat to view all file content together.
+~$ cat file1.txt file2.txt file3.txt file4.txt file5.txt > file.txt
+
+B)Create file.txt using cat and edit that using nano editor.
+~$ cat >> file.txt
+omkar Sukale
+
+c)Create 5 empty files using touch command
+~$ touch f1 f2 f3 f4 f5
+
+D)Remove previously created directory a , b and c.
+~$rm -r a
+
+~$rm -r b
+
+~$rm -r c
+
+
+Q4. Create a file with some content using vi editor
+~$ vi hello.txt
+
+a) Display the file using cat command
+~$ cat hello.txt
+hello world
+
+b) Display line numbers along with content
+~$ cat -n hello.txt
+     1
+     2  hello world
+
+c) Display the file in reverse order using tac
+~$ tac hello.txt
+hello world
+d) Combine multiple files using cat command
+~$ cat file1.txt file2.txt file3.txt >> file.txt
+~$ cat file.txt
+this is file 1
+this is file 2
+this is file 3
+this is file 4
+this is file 5
+omkar sukale
+this is file 1
+this is file 2
+this is file 3
+
+Q5. Create Random some files and sub directories.
+a) display files row wise, column wise, 1 per row
+~$ cat file.txt
+this is file 1
+this is file 2
+this is file 3
+this is file 4
+this is file 5
+omkar sukale
+this is file 1
+this is file 2
+this is file 3
+~$ column file.txt
+this is file 1  this is file 2  this is file 3  this is file 4  this is file 5  omkar sukale    this is file 1  this is file 2  this is file 3	
+
+
+
+b) sort the files in ascending, descending order
+~$ sort file.txt
+omkar sukale
+this is file 1
+this is file 1
+this is file 2
+this is file 2
+this is file 3
+this is file 3
+this is file 4
+this is file 5
+~$ sort -r  file.txt
+this is file 5
+this is file 4
+this is file 3
+this is file 3
+this is file 2
+this is file 2
+this is file 1
+this is file 1
+omkar Sukale
+
+c) Create some hidden files and sub directories and display them using “ls -a”
+~/omkar_sukale$ cat > .hiden.txt
+this is hidden file
+~/omkar_sukale$ ls
+f1  f2  f3  f4  my_file
+~/omkar_sukale$ ls -a
+.  ..  .hiden.txt  f1  f2  f3  f4  my_file
+
+d) Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
+Touch command is used to change these timestamps (access time, modification time, and change time of a file).
+
+e) Recursive display contents of your home directory.
+Ls -r
+
+f) display all attributes of files and directories using ls -l
+$ ls -l
+total 218
+-rw-r--r--  1 Shree None     19 Sep  7 22:05 b.txt
+drwxr-xr-x+ 1 Shree None      0 Sep  7 21:44 bb
+drwxr-xr-x+ 1 Shree None      0 Sep  7 22:10 cc
+-rwxr-xr-x  1 Shree None     88 Sep  7 22:05 Cygwin.bat
+-rw-r--r--  1 Shree None 157097 Sep  7 22:05 Cygwin.ico
+-rw-r--r--  1 Shree None  53342 Sep  7 22:05 Cygwin-Terminal.ico
+-rw-r--r--  1 Shree None      0 Sep  7 22:05 f1.txt
+-rw-r--r--  1 Shree None      0 Sep  7 22:05 test1
+-rw-r--r--  1 Shree None      0 Sep  7 23:33 z1.txt
+-rw-r--r--  1 Shree None      0 Sep  7 23:33 z2.txt
+-rw-r--r--  1 Shree None      0 Sep  7 23:33 z3.txt
+
+g) display attributes of a directory using ls -ld
+drwxr-xr-x+ 1 Shree None 0 Sep  7 23:34 .
+
+==================================================================================
+Q1. Create directory of your name and then create 4 files inside it named
+	a.txt, b.txt, c.txt and d.sh. And change the directory permission to
+	only user and also files permission to only user such that
+		a)user can read and write the file a.txt and b.txt
+chmod u=rx a.txt b.txt
+
+		b)user can write the file c.txt
+		chome u+w c.txt
+
+		c)user can exectuable the file d.sh. Make
+			Contents of file d.sh:
+			#/bin/sh
+			ls -lh
+
+Q2. Change the permission of the previous directory to executable only.
+	Analyze the output.
+Ans:-	Chmod +w cdac
+
+Q3. Change the permission of the previous directory to read only.
+	Analyze the output.
+Ans:-chmod  +r  cdac
+
+Q4. Use echo to list the all files of your home directory.
+Ans:-echo .*
+
+Q5. Use echo to list the all files of /etc/ directory
+Ans:-
+ $ echo .* * /etc /directory
+$ echo .*  /etc /directory
+
+Q6. Use echo to list the all files of /etc/ directory with extension name .conf
+Ans:-
+$ find  /etc – type f -name “*.conf”
+
+Q7. Use echo to append your name to a.txt
+Ans:-
+echo omkar  >> file1.txt
+==================================================================================
+
+Note:Many operation might not work.Analyze them
+1.	Create Three level nested directory a,b and c
+Ans:-
+touch aCd a Mkdir btouch .a.txttouch a.txt
+	Cd b Mkdir btouch .b.txttouch b.txt
+Cd c Mkdir ctouch .c.txttouch c.txt
+
+
+a)Create at least one hidden file in each directory
+Ans:-
+ touch aCd a Mkdir btouch .a.txt
+	Cd b Mkdir btouch .b.txt
+Cd c Mkdir ctouch .c.txt
+
+b)Create at least one normal text file in each directory
+Ans:-
+touch aCd a Mkdir btouch a.txt
+	Cd b Mkdir btouch b.txt
+Cd c Mkdir c touch c.txt
+
+c)Copy c into a
+Ans:-
+Cp -r cc aa
+
+d)Copy file inside a into b
+
+2.	Change the third level directory c permission to read only
+Ans:-chmod  +r  c
+3.	Try copying third level c directory to outside of a
+Ans:- cp -r cc bb
+4.	Create the directory  “data“ inside b
+Ans:-
+cd b 
+mkdir.data
+
+5.	Change the permission of b to read and write only
+Ans:-
+Chmod +r+w b
+6.	Create directory “data2”  inside b
+Ans:-
+Cd b
+Mkdir data2
+7.	Create data.txt file inside b
+Ans:-
+Cd b 
+Touch data.txt
+
+8.	Rename the second level directory c to copied_dir
+Ans:-mv c cp_dir
+
+9.	Change permission of copied_dir to only executable
+Ans:-chmod +w copied_dir
+
+10.	Try ls on copied_dir
+Ans:- ls
+
+11.	Try moving copied_dir to outside of a
+Ans:-mv cop_dir bb
+
+12.	Try moving data directory outside of a
+Ans:-mv data bb
+
+13.	Now change the owner of the directory a to root
+14.	Change permission of a to read write and executable to only user
+Ans:-chmod u+r+w+x aa
+
+15.	Try creating directory sample inside a
+Ans:-mkdir sample
+
+16.	Create directory x outside a
+Ans:-mkdir y
+
+17.	Try moving x inside a
+Ans:-mv x a
+18.	Create directory movies
+Ans:-mkdir movies
+
+19.	Change group of movies to sudo
+20.	Change group of movies to avahi
+21.	Try changing permission after changing ownership to root
+22.	Try Changing permission after changing group to sudo without sudo
+23.	Try Changing owner and group both to root
+24.	Try changinging permission
+25.	Try deleting the file
+Ans:- rm filename
+	
+	
